@@ -11,9 +11,7 @@ for line in syntax.read_lines("> "):
             exit(0)
         flag = 0
         t = syntax.parse_term(line)
-        # print(t)
         tp = tpcheck(t)
-        print(tp)
         if (tp == "Bool" or tp == "Nat"):
             print(execute.eval_term(t))
     except syntax.ParseError as e:

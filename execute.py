@@ -38,7 +38,7 @@ def listToString(s):
     if isinstance(s, (str)):
         return s
     # initialize an empty string
-    str1 = ""
+    str1 = " "
     s1 = flatten(s)
     # return string
     return (str1.join(s1))
@@ -55,7 +55,7 @@ def eval_term(t):
     #iszero t
     elif t[0] == 'iszero':
         val = (eval_term(t[1]))
-        if (val == 0 or val == '0' or val == '(0)'):
+        if (val == 0 or val == '0' or val == '( 0 )'):
             return 'true'
         elif val[-4:] == "true" or val[-5:] == "false":
             s = ['iszero', str(val)]
@@ -72,10 +72,10 @@ def eval_term(t):
     #pred t
     elif t[0] == 'pred':
         s = (eval_term(t[1]))
-        if s == 0 or s == '0' or s == '(0)':
+        if s == 0 or s == '0' or s == '( 0 )':
             return '0'
         elif s[:4] == 'succ':
-            if s[5:] == '(0)':
+            if s[5:] == '( 0 )':
                 return '0'
             else:
                 return s[5:]

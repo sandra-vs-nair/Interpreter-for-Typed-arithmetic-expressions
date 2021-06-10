@@ -10,6 +10,6 @@ for line in syntax.read_lines("> "):
         t = syntax.parse_term(line)
         tp = tpcheck(t)
         if (tp == "Bool" or tp == "Nat"):
-            print(execute.eval_term(t))
+            print(execute.evaluation(t))
     except syntax.ParseError as e:
         print("error: {}".format(e))

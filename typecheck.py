@@ -3,9 +3,9 @@ import syntax
 
 
 def tpcheck(t):
-    if t == "true" or t == "false":
+    if t == ["true"] or t == ["false"]:
         return "Bool"
-    elif t == "0" or t[0] == '0':
+    elif t == ["0"]:
         return "Nat"
     elif t[0] == "succ" or t[0] == "pred":
         if tpcheck(t[1]) == "Nat":
